@@ -738,6 +738,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   const els = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
@@ -753,6 +754,13 @@
   const SUPABASE_ANON_KEY = "sb_publishable_pELU86HuDHL4KAlPpqhpWw_UaRS8UHC";
 
   const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // --- EmailJS : notification par e-mail à chaque message ---
+  const EMAILJS_SERVICE_ID = "service_u043lpq";
+  const EMAILJS_TEMPLATE_ID = "template_vu56403";
+  const EMAILJS_PUBLIC_KEY = "OWMgElCZhjD-uaB-K";
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
   const form = document.getElementById('contact-form');
   const statusEl = document.getElementById('cf-status');
@@ -771,6 +779,14 @@
     };
 
     const { error } = await supabaseClient.from('messages').insert([payload]);
+
+    // Envoi de la notification par e-mail (ne bloque pas si ça échoue,
+    // le message reste de toute façon enregistré dans Supabase)
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload);
+    } catch (emailError) {
+      console.error("Notification e-mail non envoyée :", emailError);
+    }
 
     if (error) {
       statusEl.textContent = "Une erreur est survenue. Essayez par e-mail directement.";
