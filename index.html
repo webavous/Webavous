@@ -4,20 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web à vous — Sites internet sur-mesure</title>
+<link rel="icon" type="image/png" href="logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#182420;
-    --ink-soft:#33433d;
-    --paper:#e9e6db;
-    --paper-hi:#f4f2ea;
-    --gold:#a97a2c;
-    --gold-deep:#7c5a1f;
-    --rust:#7a3728;
-    --teal:#2b4a44;
-    --line: rgba(24,36,32,0.18);
+    --ink:#141E42;
+    --ink-soft:#4A5578;
+    --paper:#EEF2F9;
+    --paper-hi:#FFFFFF;
+    --gold:#0B8DFB;
+    --gold-deep:#0B63D6;
+    --rust:#0B63D6;
+    --teal:#132A5E;
+    --line: rgba(20,30,66,0.14);
     --radius: 2px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -85,8 +86,9 @@
     font-family:'Fraunces', serif;
     font-size:1.28rem;
     font-weight:600;
-    display:flex; align-items:baseline; gap:8px;
+    display:flex; align-items:center; gap:10px;
   }
+  .logo-icon{ height:28px; width:auto; display:block; }
   .logo .dot{ color:var(--gold); }
   nav ul{ list-style:none; display:flex; gap:34px; }
   nav ul a{
@@ -218,7 +220,7 @@
   }
   @media(max-width:820px){ .case{ grid-template-columns:1fr; } }
   .case-media{
-    background:linear-gradient(160deg, #1f3934, #14231f);
+    background:linear-gradient(160deg, #1B2E63, #0E1938);
     padding:44px;
     display:flex; flex-direction:column; justify-content:space-between;
     min-height:320px;
@@ -226,7 +228,7 @@
   .case-media .tag{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
-    color:#c9c2a8;
+    color:#9FC2F5;
   }
   .case-media .app-name{
     font-family:'Fraunces', serif; font-size:2.1rem; margin-top:16px; color:var(--paper-hi);
@@ -236,16 +238,16 @@
   }
   .app-feat{
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.76rem; color:#d8d3bd;
+    font-size:0.76rem; color:#C4D4F0;
     display:flex; align-items:center; gap:10px;
   }
   .app-feat::before{ content:"—"; color:var(--gold); }
   .case-body{ padding:44px; }
   .case-body h3{ color:var(--paper-hi); font-size:1.6rem; margin-bottom:16px; }
-  .case-body p{ color:#d8d3bd; margin-bottom:14px; }
+  .case-body p{ color:#C4D4F0; margin-bottom:14px; }
   .case-list{ list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:10px; }
   .case-list li{
-    font-size:0.92rem; color:#e7e3d1;
+    font-size:0.92rem; color:#D8E2F7;
     padding-left:20px; position:relative;
   }
   .case-list li::before{
@@ -264,11 +266,11 @@
 
   /* second case study — crêperie (river / stone palette, distinct from teal case) */
   .case.case-alt{
-    background:#4a4842;
+    background:#1B2447;
     margin-top:24px;
   }
   .case.case-alt .case-media{
-    background:linear-gradient(160deg, #5b6b6e, #33403f);
+    background:linear-gradient(160deg, #3E5A96, #1B2447);
     order:2;
   }
   .case.case-alt .case-body{ order:1; }
@@ -336,7 +338,7 @@
     border-color:var(--ink);
     transform:translateY(-10px);
   }
-  .price-card.highlight .price-for{ color:#c9c2a8; }
+  .price-card.highlight .price-for{ color:#9FC2F5; }
   .price-card.highlight .price-list li{ border-color:rgba(244,242,234,0.18); }
   .price-name{
     font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
@@ -451,7 +453,7 @@
   .contact{
     background:var(--ink); color:var(--paper-hi);
   }
-  .contact .sec-head p{ color:#c9c2a8; }
+  .contact .sec-head p{ color:#9FC2F5; }
   .contact .eyebrow{ color:var(--gold); }
   .contact .eyebrow::before{ background:var(--gold); }
   .contact-box{
@@ -484,7 +486,7 @@
     font-size:0.72rem;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    color:#c9c2a8;
+    color:#9FC2F5;
     margin-bottom:8px;
   }
   .contact-form input,
@@ -500,7 +502,7 @@
     transition:border-color .2s;
   }
   .contact-form input::placeholder,
-  .contact-form textarea::placeholder{ color:#8a9490; }
+  .contact-form textarea::placeholder{ color:#8C9AC2; }
   .contact-form input:focus,
   .contact-form textarea:focus{ border-color:var(--gold); }
   .contact-form textarea{ resize:vertical; min-height:110px; }
@@ -526,7 +528,7 @@
   .contact-divider{
     display:flex; align-items:center; gap:14px;
     margin:34px 0 4px;
-    color:#8a9490;
+    color:#8C9AC2;
     font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
     text-transform:uppercase; letter-spacing:0.08em;
   }
@@ -535,7 +537,7 @@
   }
 
   footer{
-    background:var(--ink); color:#8a9490;
+    background:var(--ink); color:#8C9AC2;
     padding:26px 0 40px;
     font-family:'IBM Plex Mono', monospace; font-size:0.75rem;
     text-align:center;
@@ -546,7 +548,7 @@
 
 <header>
   <div class="nav">
-    <div class="logo">Web à vous<span class="dot">.</span></div>
+    <div class="logo"><img src="logo-icon.png" alt="Web à vous" class="logo-icon">Web à vous<span class="dot">.</span></div>
     <nav>
       <ul>
         <li><a href="#realisations">Réalisations</a></li>
